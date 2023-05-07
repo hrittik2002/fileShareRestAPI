@@ -60,7 +60,7 @@ export const storeFileIntoDB = async (req, res) => {
     const response = await file.save();
 
     return res.json({
-          file: `${process.env.APP_BASE_URL}/files/${response.uuid}`,
+          file: `${process.env.CLIENT_BASE_URL}/files/${response.uuid}`,
           uuid : response.uuid,
           downloadUrl : downloadURL
         });
