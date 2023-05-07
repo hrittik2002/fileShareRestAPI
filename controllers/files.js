@@ -16,25 +16,9 @@ import { getAuth } from "firebase/auth";
 
 const app =initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-// // Configuration for Multer
-// let storage = multer.diskStorage({
-//   destination: (req, file, cb) => cb(null, "uploads/"), // we are storing the files in uploads/ directory
-//   filename: (req, file, cb) => {
-//     // generating a unique filename
-//     const uniqueName = `${Date.now()}-${Math.round(
-//       Math.random() * 1e9
-//     )}${path.extname(file.originalname)}`;
-//     cb(null, uniqueName);
-//   },
-// });
-
-// let upload = multer({
-//   storage,
-//   limit: { fileSize: 1000000 * 100 }, // 100mb
-// }).single("myfile");
-// Initialize Cloud Storage and get a reference to the service
 const storage = getStorage();
 
+// get Current Time
 const giveCurrentDateTime = () => {
   const today = new Date();
   const date =

@@ -10,7 +10,7 @@ export const downloadFile = async(req , res) =>{
             return res.status(404).send("link expired");
         }
         console.log(file.path)
-        res.download(file.path);
+        res.send({downloadLink : file.path});
     }
     catch(err){
         res.status(404).send(err);
