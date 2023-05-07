@@ -36,7 +36,7 @@ export const storeFileIntoDB = async (req, res) => {
   try {
     const dateTime = giveCurrentDateTime();
 
-    const fileName = req.file.originalname + "       " + dateTime;
+    const fileName =   dateTime + " " + req.file.originalname;
 
         const storageRef = ref(storage, `files/${fileName}`);
 
